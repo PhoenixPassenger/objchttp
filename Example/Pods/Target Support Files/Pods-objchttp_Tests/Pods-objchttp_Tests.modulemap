@@ -1,0 +1,6 @@
+framework module Pods_objchttp_Tests {
+  umbrella header "Pods-objchttp_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

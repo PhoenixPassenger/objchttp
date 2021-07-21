@@ -7,7 +7,7 @@
 //
 
 #import "HTTPOBJCViewController.h"
-
+#import <objchttp/httpRequest.h>
 @interface HTTPOBJCViewController ()
 
 @end
@@ -17,7 +17,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    __block BOOL flag = NO;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        httpRequest * requester = [httpRequest alloc];
+        [requester fetchData:&flag];
+    });
+    while (CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true) && !flag){};
 }
 
 - (void)didReceiveMemoryWarning

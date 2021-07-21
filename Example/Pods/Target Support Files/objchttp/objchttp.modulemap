@@ -1,0 +1,6 @@
+framework module objchttp {
+  umbrella header "objchttp-umbrella.h"
+
+  export *
+  module * { export * }
+}

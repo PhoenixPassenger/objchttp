@@ -1,0 +1,16 @@
+PODS:
+  - objchttp (0.1.0)
+
+DEPENDENCIES:
+  - objchttp (from `../`)
+
+EXTERNAL SOURCES:
+  objchttp:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  objchttp: f95822c8fa8076377fd300a5b14c35575aa4d050
+
+PODFILE CHECKSUM: 3c42a7cae3d5b25a390ee0af7d2a1970ac91932f
+
+COCOAPODS: 1.10.1
