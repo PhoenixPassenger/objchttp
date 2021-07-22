@@ -20,7 +20,7 @@
     __block BOOL flag = NO;
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         httpRequest * requester = [httpRequest alloc];
-        [requester fetchData:&flag];
+        [requester postData:&flag];
     });
     while (CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true) && !flag){};
 }

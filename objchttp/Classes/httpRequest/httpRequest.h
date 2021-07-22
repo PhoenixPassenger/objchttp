@@ -8,4 +8,5 @@
 #import <Foundation/Foundation.h>
 @interface httpRequest : NSObject
 -(void)fetchData: (BOOL *) flag;
+-(void)postData: (BOOL *) flag;
 @end
