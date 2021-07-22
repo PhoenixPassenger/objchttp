@@ -9,20 +9,25 @@
 #import "HTTPOBJCViewController.h"
 #import <objchttp/httpRequest.h>
 @interface HTTPOBJCViewController ()
-
 @end
 
 @implementation HTTPOBJCViewController
 
+-(void)printString: (NSString *) string{
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _label.text = string;
+    });
+    NSLog(string);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    __block BOOL flag = NO;
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         httpRequest * requester = [httpRequest alloc];
-        [requester postData:&flag];
-    });
-    while (CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0, true) && !flag){};
+        [requester fetchData:^(NSString * result) {
+            [self printString: result];
+        }];
 }
 
 - (void)didReceiveMemoryWarning

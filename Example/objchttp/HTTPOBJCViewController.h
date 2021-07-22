@@ -9,5 +9,7 @@
 @import UIKit;
 
 @interface HTTPOBJCViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *label;
+-(void)printString: (NSString *) string;
 
 @end

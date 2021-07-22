@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "httpRequest.h"
 @implementation httpRequest
--(void)fetchData: (BOOL *) flag {
+-(void)fetchData: (void (^)(NSString*))callbackBlock{
     NSURLSessionConfiguration *defaultSessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:defaultSessionConfiguration];
     NSURL *url = [NSURL URLWithString:@"https://jsonplaceholder.typicode.com/posts/1"];
@@ -22,8 +22,7 @@
     [[defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)  {
         
         NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-        NSLog(results[@"body"]);
-        *flag = TRUE;
+        callbackBlock(results[@"title"]);
         
     }] resume ];
 }
