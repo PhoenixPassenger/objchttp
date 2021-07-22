@@ -8,5 +8,7 @@
 #import <Foundation/Foundation.h>
 @interface httpRequest : NSObject
 -(void)fetchData: (void (^)(NSString*))callbackBlock;
--(void)postData: (BOOL *) flag;
+-(void)postData: (void (^)(NSString*))callbackBlock;
+-(void)putData: (void (^)(NSString*))callbackBlock;
+-(void)deleteData: (void (^)(NSString*))callbackBlock;
 @end

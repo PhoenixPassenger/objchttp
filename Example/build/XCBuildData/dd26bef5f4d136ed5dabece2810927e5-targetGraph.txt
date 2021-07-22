@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+objchttp in Pods
+Pods-objchttp_Example in Pods, depends on:
+objchttp in Pods (explicit)
+Pods-objchttp_Tests in Pods, depends on:
+Pods-objchttp_Example in Pods (explicit)

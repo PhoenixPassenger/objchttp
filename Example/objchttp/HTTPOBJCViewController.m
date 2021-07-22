@@ -24,10 +24,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        httpRequest * requester = [httpRequest alloc];
-        [requester fetchData:^(NSString * result) {
-            [self printString: result];
-        }];
+    httpRequest * requester = [httpRequest alloc];
+    // GET
+    [requester fetchData:^(NSString * result) {
+        [self printString: result];
+    }];
+
+    // POST
+    [requester postData:^(NSString * result) {
+        [self printString: result];
+    }];
+
+    // PUT
+    [requester putData:^(NSString * result) {
+        [self printString: result];
+    }];
+
+    // DELETE
+    [requester deleteData:^(NSString * result) {
+        [self printString: result];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning
