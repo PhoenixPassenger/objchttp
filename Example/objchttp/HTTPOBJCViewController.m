@@ -25,6 +25,8 @@
 {
     [super viewDidLoad];
         httpRequest * requester = [httpRequest alloc];
+        requester.schema = @"https";
+        requester.host = @"://jsonplaceholder.typicode.com/posts/1";
         [requester fetchData:^(NSString * result) {
             [self printString: result];
         }];

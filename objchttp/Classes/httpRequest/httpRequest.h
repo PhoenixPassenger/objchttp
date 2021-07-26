@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 @interface httpRequest : NSObject
+@property (nonatomic, strong) NSString *schema;
+@property (nonatomic, strong) NSString *host;
 -(void)fetchData: (void (^)(NSString*))callbackBlock;
--(void)postData: (BOOL *) flag;
+-(void)postData: (void (^)(NSString*))callbackBlock;
 @end
