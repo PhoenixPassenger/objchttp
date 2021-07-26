@@ -11,4 +11,6 @@
 @property (nonatomic, strong) NSString *host;
 -(void)fetchData: (void (^)(NSString*))callbackBlock;
 -(void)postData: (void (^)(NSString*))callbackBlock;
+-(void)putData: (void (^)(NSString*))callbackBlock;
+-(void)deleteData: (void (^)(NSString*))callbackBlock;
 @end

@@ -30,6 +30,27 @@
         [requester fetchData:^(NSString * result) {
             [self printString: result];
         }];
+
+//    // GET
+//    [requester fetchData:^(NSString * result) {
+//        [self printString: result];
+//    }];
+//
+//    // POST
+//    [requester postData:^(NSString * result) {
+//        [self printString: result];
+//    }];
+//
+//    // PUT
+//    [requester putData:^(NSString * result) {
+//        [self printString: result];
+//    }];
+//
+//    // DELETE
+//    [requester deleteData:^(NSString * result) {
+//        [self printString: result];
+//    }];
+
 }
 
 - (void)didReceiveMemoryWarning
