@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+@import objchttp;
 
 @interface HTTPOBJCAppDelegate : UIResponder <UIApplicationDelegate>
 

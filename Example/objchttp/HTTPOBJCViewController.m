@@ -25,25 +25,34 @@
 {
     [super viewDidLoad];
     httpRequest * requester = [httpRequest alloc];
-    // GET
-    [requester fetchData:^(NSString * result) {
-        [self printString: result];
-    }];
 
-    // POST
-    [requester postData:^(NSString * result) {
-        [self printString: result];
-    }];
+    NSError * error;
 
-    // PUT
-    [requester putData:^(NSString * result) {
-        [self printString: result];
-    }];
+    [requester printaErro:600 error:&error];
 
-    // DELETE
-    [requester deleteData:^(NSString * result) {
-        [self printString: result];
-    }];
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+
+//    // GET
+//    [requester fetchData:^(NSString * result) {
+//        [self printString: result];
+//    }];
+//
+//    // POST
+//    [requester postData:^(NSString * result) {
+//        [self printString: result];
+//    }];
+//
+//    // PUT
+//    [requester putData:^(NSString * result) {
+//        [self printString: result];
+//    }];
+//
+//    // DELETE
+//    [requester deleteData:^(NSString * result) {
+//        [self printString: result];
+//    }];
 
 }
 
