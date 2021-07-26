@@ -6,7 +6,30 @@
 //
 #import <Foundation/Foundation.h>
 #import "httpRequest.h"
+#import "ServiceError.h"
+
 @implementation httpRequest
+
+// MARK: - DEBUG Service Errors
+- (void)printaErro:(int)code error:(NSError**)error {
+    switch (code) {
+    case 1:
+        *error = [ServiceError requestFailedWithDescription: @"error description here"];
+        break;
+    case 2:
+        *error = [ServiceError malformedURLRequestWithURL: @"htptz\\:goggle.org"];
+        break;
+    case 404:
+        *error = [ServiceError notFound];
+        break;
+    case 503:
+        *error = [ServiceError badRequest];
+        break;
+    default:
+        *error = [ServiceError unknownErrorWithStatusCode: code];
+        break;
+    }
+}
 
 -(void)fetchData: (void (^)(NSString*))callbackBlock{
     NSURLSessionConfiguration *defaultSessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];

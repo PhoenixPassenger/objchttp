@@ -7,14 +7,12 @@
 
 #import <Foundation/Foundation.h>
 
-FOUNDATION_EXPORT NSString *const ObjcHttpErrorDomain;
+@interface ServiceError: NSObject
 
-enum {
-    ServiceErrorRequestFailed = 0,
-    ServiceErrorMalformedURLRequest = 1,
-    ServiceErrorNotFound = 2,
-    ServiceErrorBadRequest = 3,
-    ServiceErrorUnknownError = 4
-};
++(NSError *)requestFailedWithDescription:(NSString *)description;
++(NSError *)malformedURLRequestWithURL:(NSString *)url;
++(NSError *)notFound;
++(NSError *)badRequest;
++(NSError *)unknownErrorWithStatusCode:(int)statusCode;
 
-//Source: https://stackoverflow.com/questions/4654653/how-can-i-use-nserror-in-my-iphone-app
+@end

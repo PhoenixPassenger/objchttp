@@ -5,8 +5,7 @@
 //  Created by Alley Pereira on 23/07/21.
 //
 
-#ifndef genericHttp_h
-#define genericHttp_h
+#import <Foundation/Foundation.h>
+@interface genericHttp: NSObject
 
-
-#endif /* genericHttp_h */
+@end

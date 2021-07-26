@@ -13,4 +13,7 @@
 -(void)postData: (void (^)(NSString*))callbackBlock;
 -(void)putData: (void (^)(NSString*))callbackBlock;
 -(void)deleteData: (void (^)(NSString*))callbackBlock;
+
+- (void)printaErro:(int)code error:(NSError**)error;
+
 @end
