@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		02DE813992A85F1504CF7706FC3F4BC3 /* httpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B496EC328DE40A0302A7B21C4F9D361F /* httpRequest.m */; };
+		18E5B99226AEE660002098D8 /* ServiceError.h in Headers */ = {isa = PBXBuildFile; fileRef = 18E5B99026AEE660002098D8 /* ServiceError.h */; };
+		18E5B99326AEE660002098D8 /* ServiceError.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5B99126AEE660002098D8 /* ServiceError.m */; };
+		18E5B99626AEE66C002098D8 /* genericHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5B99426AEE66C002098D8 /* genericHttp.m */; };
+		18E5B99726AEE66C002098D8 /* genericHttp.h in Headers */ = {isa = PBXBuildFile; fileRef = 18E5B99526AEE66C002098D8 /* genericHttp.h */; };
 		2BF2427943AFB56750F61E2CEAB3ABFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		501C51E54998819000FD3BE9079E67C5 /* Pods-objchttp_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7524277AC3F7FFA8A1DCE35E441B1D95 /* Pods-objchttp_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		677DCFF2CB1C3A5ED027EB7A6A5005C1 /* objchttp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ACE7F53F59A0D5447292DB378299DF1 /* objchttp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,8 +43,12 @@
 
 /* Begin PBXFileReference section */
 		01266359E615627A9BB2CCBB1693B950 /* objchttp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = objchttp.modulemap; sourceTree = "<group>"; };
-		04D0B3E12269507A64C69B9E241F39B9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		3CF1721AFABC000E7BD0345B22CA31F0 /* Pods_objchttp_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_objchttp_Example.framework; path = "Pods-objchttp_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D0B3E12269507A64C69B9E241F39B9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		18E5B99026AEE660002098D8 /* ServiceError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceError.h; sourceTree = "<group>"; };
+		18E5B99126AEE660002098D8 /* ServiceError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceError.m; sourceTree = "<group>"; };
+		18E5B99426AEE66C002098D8 /* genericHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = genericHttp.m; sourceTree = "<group>"; };
+		18E5B99526AEE66C002098D8 /* genericHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = genericHttp.h; sourceTree = "<group>"; };
+		3CF1721AFABC000E7BD0345B22CA31F0 /* Pods_objchttp_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_objchttp_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		496B51053E494B249F8FFDE00DEFC114 /* Pods-objchttp_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-objchttp_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		4C6117D105C0D09F698D230CF5E564CD /* Pods-objchttp_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-objchttp_Example-dummy.m"; sourceTree = "<group>"; };
 		4DD82B9EFB8E3DEEFF0CE9C398296759 /* httpRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = httpRequest.h; path = objchttp/Classes/httpRequest/httpRequest.h; sourceTree = "<group>"; };
@@ -49,17 +57,17 @@
 		545BE4D5288AB8F3EC0D51BA265F896B /* Pods-objchttp_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-objchttp_Tests-dummy.m"; sourceTree = "<group>"; };
 		5ACE7F53F59A0D5447292DB378299DF1 /* objchttp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "objchttp-umbrella.h"; sourceTree = "<group>"; };
 		62E294279398BF8478CDE4909C58438C /* Pods-objchttp_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-objchttp_Example.release.xcconfig"; sourceTree = "<group>"; };
-		6D137BE0E25313133907E8ED15743F5B /* Pods_objchttp_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_objchttp_Tests.framework; path = "Pods-objchttp_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D137BE0E25313133907E8ED15743F5B /* Pods_objchttp_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_objchttp_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7524277AC3F7FFA8A1DCE35E441B1D95 /* Pods-objchttp_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-objchttp_Tests-umbrella.h"; sourceTree = "<group>"; };
-		7C685B581644521D29D90A60197AAC89 /* objchttp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = objchttp.framework; path = objchttp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C685B581644521D29D90A60197AAC89 /* objchttp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = objchttp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E006FEFD7C9DE5B342AF4AC75B80388 /* objchttp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = objchttp.debug.xcconfig; sourceTree = "<group>"; };
 		7E6D634E259CF6537FD9EAA9AF57316A /* Pods-objchttp_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-objchttp_Example.modulemap"; sourceTree = "<group>"; };
-		80009D1E8A03AD3776A480F426771E6A /* objchttp.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = objchttp.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		80009D1E8A03AD3776A480F426771E6A /* objchttp.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = objchttp.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		811FEFECD1E0AE516CC5D54B78D509E5 /* Pods-objchttp_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-objchttp_Example-frameworks.sh"; sourceTree = "<group>"; };
 		984696962D538B259B8C5DA5A474F6E1 /* Pods-objchttp_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-objchttp_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9852AE04B7FB7C23149A73F0323727D1 /* Pods-objchttp_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-objchttp_Example-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B496EC328DE40A0302A7B21C4F9D361F /* httpRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = httpRequest.m; path = objchttp/Classes/httpRequest/httpRequest.m; sourceTree = "<group>"; };
 		B770F49C2C9A72C547159D86F67CD557 /* objchttp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "objchttp-dummy.m"; sourceTree = "<group>"; };
 		C9B8D04DE2934A24DD34DF7314EBB9FB /* Pods-objchttp_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-objchttp_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -67,7 +75,7 @@
 		CB5D949738B1E20BF16056230A1FC991 /* Pods-objchttp_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-objchttp_Tests-Info.plist"; sourceTree = "<group>"; };
 		D3BC51949AEEB3FD2EF8FE8B9E5EE2A9 /* Pods-objchttp_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-objchttp_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7A3EFC54A9083A9BDC3D89BECF446D5 /* Pods-objchttp_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-objchttp_Example-umbrella.h"; sourceTree = "<group>"; };
-		E13B868CFEA185EA5488EEE3867C49E5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		E13B868CFEA185EA5488EEE3867C49E5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E25F8BED65E5AF9562C1B436E54E5319 /* Pods-objchttp_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-objchttp_Tests.modulemap"; sourceTree = "<group>"; };
 		E551053177328DE067B05CC45420D222 /* Pods-objchttp_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-objchttp_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E7F9A06BFE31930061DA9A4CA12137AD /* objchttp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = objchttp.release.xcconfig; sourceTree = "<group>"; };
@@ -108,6 +116,15 @@
 				C1398CE3DEB0C1B5F7E5DCEAAB9E2C40 /* objchttp */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		18E5B98F26AEE660002098D8 /* ServiceError */ = {
+			isa = PBXGroup;
+			children = (
+				18E5B99026AEE660002098D8 /* ServiceError.h */,
+				18E5B99126AEE660002098D8 /* ServiceError.m */,
+			);
+			path = ServiceError;
 			sourceTree = "<group>";
 		};
 		32D4AAACB0422B1FE7EDEBB68C365684 /* Targets Support Files */ = {
@@ -173,8 +190,11 @@
 		C1398CE3DEB0C1B5F7E5DCEAAB9E2C40 /* objchttp */ = {
 			isa = PBXGroup;
 			children = (
+				18E5B98F26AEE660002098D8 /* ServiceError */,
 				4DD82B9EFB8E3DEEFF0CE9C398296759 /* httpRequest.h */,
 				B496EC328DE40A0302A7B21C4F9D361F /* httpRequest.m */,
+				18E5B99526AEE66C002098D8 /* genericHttp.h */,
+				18E5B99426AEE66C002098D8 /* genericHttp.m */,
 				F6C83355D1C72DC6DC270D3B306D86E7 /* Pod */,
 				FDD99AE1B902D04698BE53ED3221343F /* Support Files */,
 			);
@@ -233,6 +253,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E5B99726AEE66C002098D8 /* genericHttp.h in Headers */,
+				18E5B99226AEE660002098D8 /* ServiceError.h in Headers */,
 				FA65E718C6C141D955C8627A40034ECD /* httpRequest.h in Headers */,
 				677DCFF2CB1C3A5ED027EB7A6A5005C1 /* objchttp-umbrella.h in Headers */,
 			);
@@ -380,6 +402,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				02DE813992A85F1504CF7706FC3F4BC3 /* httpRequest.m in Sources */,
+				18E5B99626AEE66C002098D8 /* genericHttp.m in Sources */,
+				18E5B99326AEE660002098D8 /* ServiceError.m in Sources */,
 				CFBCC2E446825D044B8A302DA4A197E9 /* objchttp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,8 +713,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
