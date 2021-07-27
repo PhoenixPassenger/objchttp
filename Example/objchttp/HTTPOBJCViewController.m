@@ -25,38 +25,32 @@
 {
     [super viewDidLoad];
     httpRequest * requester = [httpRequest alloc];
-    
+    requester.schema = @"https";
+    requester.host = @"://jsonplaceholder.typicode.com";
+
     // GET
-    [requester fetchData:@"https"
-                    host:@"://jsonplaceholder.typicode.com"
-             routerParam:@"/posts/1"
+    [requester fetchData: @"/posts/1"
               completion:^(NSString * result) {
         NSLog(@"Callback GET");
         [self printString: result];
     }];
 
     // POST
-    [requester postData:@"https"
-                   host:@"://jsonplaceholder.typicode.com"
-            routerParam:@"/posts/"
+    [requester postData: @"/posts/"
              completion:^(NSString * result) {
         NSLog(@"Callback POST");
         [self printString: result];
     }];
 
     // PUT
-    [requester putData:@"https"
-                  host:@"://reqres.in/api"
-           routerParam:@"/users/2"
+    [requester putData: @"/users/2"
             completion:^(NSString * result) {
         NSLog(@"Callback PUT");
         [self printString: result];
     }];
 
     // DELETE
-    [requester deleteData:@"https"
-                     host:@"://reqres.in/api"
-              routerParam:@"/users/2"
+    [requester deleteData: @"/users/2"
                completion:^(NSString * result) {
         NSLog(@"Callback DELETE");
         [self printString: result];

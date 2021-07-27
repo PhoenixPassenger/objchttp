@@ -8,11 +8,14 @@
 #import <Foundation/Foundation.h>
 @interface httpRequest : NSObject
 
--(void)fetchData:(NSString *)schema host: (NSString *)host routerParam: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
--(void)postData: (NSString *)schema host: (NSString *)host routerParam: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
--(void)putData: (NSString *)schema host: (NSString *)host routerParam: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
--(void)deleteData: (NSString *)schema host: (NSString *)host routerParam: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+@property (nonatomic, strong) NSString *schema;
+@property (nonatomic, strong) NSString *host;
 
-- (void)printaErro:(int)code error:(NSError**)error;
+-(void)fetchData: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+-(void)postData: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+-(void)putData: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+-(void)deleteData: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+
+- (void)printErrorWithStatusCode:(long)code error:(NSError**)error;
 
 @end

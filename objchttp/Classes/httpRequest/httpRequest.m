@@ -11,37 +11,28 @@
 @implementation httpRequest
 
 // MARK: - DEBUG Service Errors
-- (void)printaErro:(int)code error:(NSError**)error {
+- (void)printErrorWithStatusCode:(long)code error:(NSError**)error {
     switch (code) {
-    case 1:
-        *error = [ServiceError requestFailedWithDescription: @"error description here"];
-        break;
-    case 2:
-        *error = [ServiceError malformedURLRequestWithURL: @"htptz\\:goggle.org"];
-        break;
     case 404:
         *error = [ServiceError notFound];
         break;
-    case 503:
+    case 400:
         *error = [ServiceError badRequest];
         break;
     default:
-        *error = [ServiceError unknownErrorWithStatusCode: code];
+        *error = [ServiceError unknownErrorWithStatusCode: (int)code];
         break;
     }
 }
 
-//  (NSString *) getDataFrom:(NSString *)url{
--(void)fetchData:(NSString *)schema
-            host: (NSString *)host
-     routerParam: (NSString *)routerParam
+-(void)fetchData: (NSString *)routerParam
       completion: (void (^)(NSString*))callbackBlock {
 
     //NSMutableURLRequest setup
     NSURLSessionConfiguration *defaultSessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:defaultSessionConfiguration];
-    NSMutableString *urlString = schema.mutableCopy;
-    [urlString appendString: host];
+    NSMutableString *urlString = _schema.mutableCopy;
+    [urlString appendString: _host];
     [urlString appendString: routerParam];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
@@ -53,31 +44,37 @@
     [[defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data,
                                                                         NSURLResponse *response,
                                                                         NSError *error)  {
-        if (error) NSLog(@"GET Request error - %@",error.localizedDescription);
+        if (error) NSLog(@"GET Request error - %@",
+                         [ServiceError requestFailedWithDescription:error.localizedDescription]);
         else {
             //NSLog(@"\n⬇️ Body recebido no retorno da GET request %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
 
+            NSError * serializationError;
             NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data
                                                                     options:kNilOptions
-                                                                      error:&error];
+                                                                      error:&serializationError];
 
-            if (error) NSLog(@"GET JSONSerialization error - %@", error.localizedDescription);
+            NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+            if (HTTPResponse.statusCode != 200) {
+                NSLog(@"GET Response Error");
+                [self printErrorWithStatusCode:HTTPResponse.statusCode error:nil];
+            }
+
+            if (serializationError) NSLog(@"GET JSONSerialization error - %@", serializationError.localizedDescription);
             else callbackBlock(results.description);
         }
         
     }] resume ];
 }
 
--(void)postData: (NSString *)schema
-           host: (NSString *)host
-    routerParam: (NSString *)routerParam
+-(void)postData: (NSString *)routerParam
      completion: (void (^)(NSString*))callbackBlock {
 
     //URL setup
     NSURLSessionConfiguration *defaultSessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:defaultSessionConfiguration];
-    NSMutableString *urlString = schema.mutableCopy;
-    [urlString appendString: host];
+    NSMutableString *urlString = _schema.mutableCopy;
+    [urlString appendString: _host];
     [urlString appendString: routerParam];
     NSURL *url = [NSURL URLWithString:urlString];
 
@@ -85,7 +82,8 @@
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
     NSError* error;
     NSDictionary *userDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:@"first title", @"title",@"1",@"userId", @"aaaaaaaaaaa",@"body", nil];
-    if ([NSJSONSerialization isValidJSONObject:userDictionary]) {//validate it
+
+    if ([NSJSONSerialization isValidJSONObject:userDictionary]) {
         NSData* jsonData = [NSJSONSerialization dataWithJSONObject:userDictionary options:NSJSONWritingPrettyPrinted error: &error];
         
         [urlRequest setHTTPMethod:@"POST"];
@@ -100,15 +98,23 @@
                                                                             NSURLResponse *response,
                                                                             NSError *error)  {
 
-            if (error) NSLog(@"POST Request error - %@",error.localizedDescription);
+            if (error) NSLog(@"POST Request error - %@",
+                             [ServiceError requestFailedWithDescription:error.localizedDescription]);
             else {
                 //NSLog(@"\n⬇️ Body recebido no retorno da POST request %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
 
+                NSError * serializationError;
                 NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data
                                                                         options:kNilOptions
-                                                                          error:&error];
+                                                                          error:&serializationError];
 
-                if (error) NSLog(@"POST JSONSerialization error - %@", error.localizedDescription);
+                NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+                if (HTTPResponse.statusCode != 200) {
+                    NSLog(@"GET Response Error");
+                    [self printErrorWithStatusCode:HTTPResponse.statusCode error:nil];
+                }
+
+                if (serializationError) NSLog(@"POST JSONSerialization error - %@", serializationError.localizedDescription);
                 else callbackBlock(results.description);
             }
             
@@ -116,15 +122,13 @@
     }
 }
 
--(void)putData: (NSString *)schema
-          host: (NSString *)host
-   routerParam: (NSString *)routerParam
+-(void)putData:(NSString *)routerParam
     completion: (void (^)(NSString*))callbackBlock {
 
     NSURLSessionConfiguration *defaultSessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:defaultSessionConfiguration];
-    NSMutableString *urlString = schema.mutableCopy;
-    [urlString appendString: host];
+    NSMutableString *urlString = _schema.mutableCopy;
+    [urlString appendString: _host];
     [urlString appendString: routerParam];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
@@ -147,15 +151,22 @@
                                                                             NSURLResponse *response,
                                                                             NSError *error)  {
 
-            if (error) NSLog(@"PUT Request error - %@",error.localizedDescription);
+            if (error) NSLog(@"PUT Request error - %@",ServiceError.badRequest);
             else {
                 //NSLog(@"\n⬇️ Body recebido no retorno da PUT request %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
 
+                NSError * serializationError;
                 NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data
                                                                         options:kNilOptions
-                                                                          error:&error];
+                                                                          error:&serializationError];
 
-                if (error) NSLog(@"PUT JSONSerialization error - %@", error.localizedDescription);
+                NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+                if (HTTPResponse.statusCode != 200) {
+                    NSLog(@"GET Response Error");
+                    [self printErrorWithStatusCode:HTTPResponse.statusCode error:nil];
+                }
+
+                if (serializationError) NSLog(@"PUT JSONSerialization error - %@", serializationError.localizedDescription);
                 else callbackBlock(results.description);
             }
 
@@ -164,15 +175,13 @@
     }
 }
 
--(void)deleteData: (NSString *)schema
-             host: (NSString *)host
-      routerParam: (NSString *)routerParam
+-(void)deleteData: (NSString *)routerParam
        completion: (void (^)(NSString*))callbackBlock {
 
     NSURLSessionConfiguration *defaultSessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:defaultSessionConfiguration];
-    NSMutableString *urlString = schema.mutableCopy;
-    [urlString appendString: host];
+    NSMutableString *urlString = _schema.mutableCopy;
+    [urlString appendString: _host];
     [urlString appendString: routerParam];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
@@ -187,15 +196,22 @@
 
         //NSLog(@"\n⏺ Method DELETE successfull");
 
-        if (error) NSLog(@"DELETE Request error - %@",error.localizedDescription);
+        if (error) NSLog(@"DELETE Request error - %@",ServiceError.badRequest);
         else {
             //NSLog(@"\n⬇️ Body recebido no retorno da DELETE request %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
 
+            NSError * serializationError;
             NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data
                                                                     options:kNilOptions
-                                                                      error:&error];
+                                                                      error:& serializationError];
 
-            if (error) NSLog(@"DELETE JSONSerialization error - %@", error.localizedDescription);
+            NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+            if (HTTPResponse.statusCode != 200) {
+                NSLog(@"GET Response Error");
+                [self printErrorWithStatusCode:HTTPResponse.statusCode error:nil];
+            }
+
+            if (serializationError) NSLog(@"DELETE JSONSerialization error - %@", serializationError.localizedDescription);
             else callbackBlock(results.description);
         }
 
@@ -204,6 +220,3 @@
 }
 
 @end
-
-// MARK: ToDo
-// -> Tratar query params dos métodos
