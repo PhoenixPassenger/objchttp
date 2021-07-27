@@ -27,6 +27,11 @@
         httpRequest * requester = [httpRequest alloc];
         requester.schema = @"https";
         requester.host = @"://jsonplaceholder.typicode.com/posts/1";
+        NSDictionary *userDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:@"Fullstack", @"job", nil];
+        NSDictionary *uDictionary = userDictionary.mutableCopy;
+        [uDictionary setValue:@"Pikachu" forKey:@"name"];
+        NSLog(uDictionary.description);
+        NSLog(userDictionary.description);
         [requester fetchData:^(NSString * result) {
             [self printString: result];
         }];

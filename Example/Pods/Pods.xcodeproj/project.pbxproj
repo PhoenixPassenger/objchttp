@@ -56,6 +56,8 @@
 		5335E5FE19D9B13C7E62500E0FED9AB8 /* Pods-objchttp_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-objchttp_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		545BE4D5288AB8F3EC0D51BA265F896B /* Pods-objchttp_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-objchttp_Tests-dummy.m"; sourceTree = "<group>"; };
 		5ACE7F53F59A0D5447292DB378299DF1 /* objchttp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "objchttp-umbrella.h"; sourceTree = "<group>"; };
+		5BEBD2E326AEE737002CDD5E /* ServiceError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceError.h; sourceTree = "<group>"; };
+		5BEBD2E426AEE737002CDD5E /* ServiceError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceError.m; sourceTree = "<group>"; };
 		62E294279398BF8478CDE4909C58438C /* Pods-objchttp_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-objchttp_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6D137BE0E25313133907E8ED15743F5B /* Pods_objchttp_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_objchttp_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -154,6 +156,16 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		5BEBD2E226AEE737002CDD5E /* ServiceError */ = {
+			isa = PBXGroup;
+			children = (
+				5BEBD2E326AEE737002CDD5E /* ServiceError.h */,
+				5BEBD2E426AEE737002CDD5E /* ServiceError.m */,
+			);
+			name = ServiceError;
+			path = ../../ServiceError;
+			sourceTree = "<group>";
+		};
 		7E69FCB4219DA79771CB7590A169B9EF /* Pods-objchttp_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +217,7 @@
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
+				5BEBD2E226AEE737002CDD5E /* ServiceError */,
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				0E79D1759E6B1AA35532AC3C15DA2CBD /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
