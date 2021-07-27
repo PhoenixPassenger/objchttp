@@ -31,28 +31,26 @@
     requester.schema = @"https";
     requester.host = @"://jsonplaceholder.typicode.com";
 
-    // GET
-    [requester fetchData: @"/posts/1"
-              completion:^(NSString * result) {
-        NSLog(@"Callback GET");
-        [self printString: result];
-    }];
-
-    // POST
-    [requester postData: @"/posts/"
-             completion:^(NSString * result) {
-        NSLog(@"Callback POST");
-        [self printString: result];
-    }];
-
-    // PUT
-    [requester putData: @"/users/2"
+//    // GET
+//    [requester fetchData: @"/posts/1"
+//              completion:^(NSString * result) {
+//        NSLog(@"Callback GET");
+//        [self printString: result];
+//    }];
+//
+//    // POST
+//    [requester postData:uDictionary :@"/posts/" completion:^(NSString * result) {
+//        NSLog(@"Callback POST");
+//        [self printString: result];
+//    }];
+//    // PUT
+    [requester putData:uDictionary :@"/users/2"
             completion:^(NSString * result) {
         NSLog(@"Callback PUT");
         [self printString: result];
     }];
 
-    // DELETE
+//     DELETE
     [requester deleteData: @"/users/2"
                completion:^(NSString * result) {
         NSLog(@"Callback DELETE");
