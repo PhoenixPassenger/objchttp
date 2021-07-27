@@ -12,9 +12,11 @@
 @property (nonatomic, strong) NSString *host;
 
 -(void)fetchData: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
--(void)postData: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
--(void)putData: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+-(void)postData: (NSMutableDictionary *)jsonDict : (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+-(void)putData: (NSMutableDictionary *)jsonDict :(NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
 -(void)deleteData: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+-(void)requestWithMethodAndBody: (NSString *)httpMethod : (NSMutableDictionary *)jsonDict :(NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+-(void)requestWithMethod: (NSString *)httpMethod : (NSMutableDictionary *)jsonDict :(NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
 
 - (void)printErrorWithStatusCode:(long)code error:(NSError**)error;
 
