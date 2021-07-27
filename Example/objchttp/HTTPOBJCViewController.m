@@ -18,43 +18,51 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         _label.text = string;
     });
-    NSLog(string);
+    NSLog(@"%@", string);
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        httpRequest * requester = [httpRequest alloc];
-        requester.schema = @"https";
-        requester.host = @"://jsonplaceholder.typicode.com/posts/1";
+    httpRequest * requester = [httpRequest alloc];
         NSDictionary *userDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:@"Fullstack", @"job", nil];
         NSDictionary *uDictionary = userDictionary.mutableCopy;
         [uDictionary setValue:@"Pikachu" forKey:@"name"];
-        NSLog(uDictionary.description);
-        NSLog(userDictionary.description);
-        [requester fetchData:^(NSString * result) {
-            [self printString: result];
-        }];
+    // GET
+    [requester fetchData:@"https"
+                    host:@"://jsonplaceholder.typicode.com"
+             routerParam:@"/posts/1"
+              completion:^(NSString * result) {
+        NSLog(@"Callback GET");
+        [self printString: result];
+    }];
 
-//    // GET
-//    [requester fetchData:^(NSString * result) {
-//        [self printString: result];
-//    }];
-//
-//    // POST
-//    [requester postData:^(NSString * result) {
-//        [self printString: result];
-//    }];
-//
-//    // PUT
-//    [requester putData:^(NSString * result) {
-//        [self printString: result];
-//    }];
-//
-//    // DELETE
-//    [requester deleteData:^(NSString * result) {
-//        [self printString: result];
-//    }];
+    // POST
+    [requester postData:@"https"
+                   host:@"://jsonplaceholder.typicode.com"
+            routerParam:@"/posts/"
+             completion:^(NSString * result) {
+        NSLog(@"Callback POST");
+        [self printString: result];
+    }];
+
+    // PUT
+    [requester putData:@"https"
+                  host:@"://reqres.in/api"
+           routerParam:@"/users/2"
+            completion:^(NSString * result) {
+        NSLog(@"Callback PUT");
+        [self printString: result];
+    }];
+
+    // DELETE
+    [requester deleteData:@"https"
+                     host:@"://reqres.in/api"
+              routerParam:@"/users/2"
+               completion:^(NSString * result) {
+        NSLog(@"Callback DELETE");
+        [self printString: result];
+    }];
 
 }
 

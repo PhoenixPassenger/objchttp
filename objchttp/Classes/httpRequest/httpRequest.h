@@ -7,12 +7,11 @@
 
 #import <Foundation/Foundation.h>
 @interface httpRequest : NSObject
-@property (nonatomic, strong) NSString *schema;
-@property (nonatomic, strong) NSString *host;
--(void)fetchData: (void (^)(NSString*))callbackBlock;
--(void)postData: (void (^)(NSString*))callbackBlock;
--(void)putData: (void (^)(NSString*))callbackBlock;
--(void)deleteData: (void (^)(NSString*))callbackBlock;
+
+-(void)fetchData:(NSString *)schema host: (NSString *)host routerParam: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+-(void)postData: (NSString *)schema host: (NSString *)host routerParam: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+-(void)putData: (NSString *)schema host: (NSString *)host routerParam: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+-(void)deleteData: (NSString *)schema host: (NSString *)host routerParam: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
 
 - (void)printaErro:(int)code error:(NSError**)error;
 
