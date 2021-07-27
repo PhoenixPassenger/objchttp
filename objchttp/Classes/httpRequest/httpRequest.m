@@ -109,7 +109,7 @@
                                                                           error:&serializationError];
 
                 NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
-                if (HTTPResponse.statusCode != 200) {
+                if (HTTPResponse.statusCode != 200 && HTTPResponse.statusCode != 201) {
                     NSLog(@"GET Response Error");
                     [self printErrorWithStatusCode:HTTPResponse.statusCode error:nil];
                 }

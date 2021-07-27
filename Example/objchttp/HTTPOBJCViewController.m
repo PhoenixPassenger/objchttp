@@ -37,25 +37,25 @@
 //        NSLog(@"Callback GET");
 //        [self printString: result];
 //    }];
-//
-//    // POST
-//    [requester postData:uDictionary :@"/posts/" completion:^(NSString * result) {
-//        NSLog(@"Callback POST");
+
+    // POST
+    [requester postData:uDictionary :@"/posts" completion:^(NSString * result) {
+        NSLog(@"Callback POST");
+        [self printString: result];
+    }];
+//    // PUT
+//    [requester putData:uDictionary :@"/users/2"
+//            completion:^(NSString * result) {
+//        NSLog(@"Callback PUT");
 //        [self printString: result];
 //    }];
-//    // PUT
-    [requester putData:uDictionary :@"/users/2"
-            completion:^(NSString * result) {
-        NSLog(@"Callback PUT");
-        [self printString: result];
-    }];
-
-//     DELETE
-    [requester deleteData: @"/users/2"
-               completion:^(NSString * result) {
-        NSLog(@"Callback DELETE");
-        [self printString: result];
-    }];
+//
+////     DELETE
+//    [requester deleteData: @"/users/2"
+//               completion:^(NSString * result) {
+//        NSLog(@"Callback DELETE");
+//        [self printString: result];
+//    }];
 
 }
 
