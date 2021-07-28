@@ -10,7 +10,7 @@
 		02DE813992A85F1504CF7706FC3F4BC3 /* httpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B496EC328DE40A0302A7B21C4F9D361F /* httpRequest.m */; };
 		2BF2427943AFB56750F61E2CEAB3ABFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		501C51E54998819000FD3BE9079E67C5 /* Pods-objchttp_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7524277AC3F7FFA8A1DCE35E441B1D95 /* Pods-objchttp_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B12AA2926B187DD002D3F35 /* ServiceError.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B12AA2726B187DD002D3F35 /* ServiceError.h */; };
+		5B12AA2926B187DD002D3F35 /* ServiceError.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B12AA2726B187DD002D3F35 /* ServiceError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B12AA2A26B187DD002D3F35 /* ServiceError.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12AA2826B187DD002D3F35 /* ServiceError.m */; };
 		677DCFF2CB1C3A5ED027EB7A6A5005C1 /* objchttp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ACE7F53F59A0D5447292DB378299DF1 /* objchttp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C69B11195A2455EC374B2177D98297B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
@@ -248,8 +248,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B12AA2926B187DD002D3F35 /* ServiceError.h in Headers */,
 				FA65E718C6C141D955C8627A40034ECD /* httpRequest.h in Headers */,
+				5B12AA2926B187DD002D3F35 /* ServiceError.h in Headers */,
 				677DCFF2CB1C3A5ED027EB7A6A5005C1 /* objchttp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
