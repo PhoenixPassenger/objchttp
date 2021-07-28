@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
-		02DE813992A85F1504CF7706FC3F4BC3 /* httpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B496EC328DE40A0302A7B21C4F9D361F /* httpRequest.m */; };
-		18F37FED26B0546E00FAF9D0 /* ServiceError.h in Headers */ = {isa = PBXBuildFile; fileRef = 18F37FEB26B0546E00FAF9D0 /* ServiceError.h */; };
-		18F37FEE26B0546E00FAF9D0 /* ServiceError.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37FEC26B0546E00FAF9D0 /* ServiceError.m */; };
-=======
->>>>>>> 47d398d65f82d2836af04a8da838637906214bd5
 		2BF2427943AFB56750F61E2CEAB3ABFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		501C51E54998819000FD3BE9079E67C5 /* Pods-objchttp_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7524277AC3F7FFA8A1DCE35E441B1D95 /* Pods-objchttp_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B12AA2C26B18B38002D3F35 /* ServiceError.h in Headers */ = {isa = PBXBuildFile; fileRef = AC3E6E8D2EC0BEE28AF5C86D35053CB3 /* ServiceError.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,13 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
-		01266359E615627A9BB2CCBB1693B950 /* objchttp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = objchttp.modulemap; sourceTree = "<group>"; };
-		04D0B3E12269507A64C69B9E241F39B9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		18F37FEB26B0546E00FAF9D0 /* ServiceError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceError.h; sourceTree = "<group>"; };
-		18F37FEC26B0546E00FAF9D0 /* ServiceError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceError.m; sourceTree = "<group>"; };
-=======
->>>>>>> 47d398d65f82d2836af04a8da838637906214bd5
 		3CF1721AFABC000E7BD0345B22CA31F0 /* Pods_objchttp_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_objchttp_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6D8EAD849A56781564E8496760FA61 /* objchttp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "objchttp-dummy.m"; sourceTree = "<group>"; };
 		43245CB3B60C11DC7CEAC74BA9779125 /* objchttp-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "objchttp-prefix.pch"; sourceTree = "<group>"; };
@@ -61,10 +48,6 @@
 		4FFD73CBCB3CEA2CE4B41CC79C3FC073 /* Pods-objchttp_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-objchttp_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5335E5FE19D9B13C7E62500E0FED9AB8 /* Pods-objchttp_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-objchttp_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		545BE4D5288AB8F3EC0D51BA265F896B /* Pods-objchttp_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-objchttp_Tests-dummy.m"; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		5ACE7F53F59A0D5447292DB378299DF1 /* objchttp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "objchttp-umbrella.h"; sourceTree = "<group>"; };
-=======
->>>>>>> 47d398d65f82d2836af04a8da838637906214bd5
 		62E294279398BF8478CDE4909C58438C /* Pods-objchttp_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-objchttp_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6D137BE0E25313133907E8ED15743F5B /* Pods_objchttp_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_objchttp_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -138,18 +121,10 @@
 			path = "Example/Pods/Target Support Files/objchttp";
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-		18F37FEA26B0546E00FAF9D0 /* ServiceError */ = {
-			isa = PBXGroup;
-			children = (
-				18F37FEB26B0546E00FAF9D0 /* ServiceError.h */,
-				18F37FEC26B0546E00FAF9D0 /* ServiceError.m */,
-=======
 		0E79D1759E6B1AA35532AC3C15DA2CBD /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
 				556217F831B4CAC3943BAE1176A6E526 /* objchttp */,
->>>>>>> 47d398d65f82d2836af04a8da838637906214bd5
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -185,8 +160,6 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-=======
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +168,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
->>>>>>> 47d398d65f82d2836af04a8da838637906214bd5
 		7E69FCB4219DA79771CB7590A169B9EF /* Pods-objchttp_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,17 +214,9 @@
 		B878EA310E3876F50483C90F22725FD8 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				18F37FEA26B0546E00FAF9D0 /* ServiceError */,
-				4DD82B9EFB8E3DEEFF0CE9C398296759 /* httpRequest.h */,
-				B496EC328DE40A0302A7B21C4F9D361F /* httpRequest.m */,
-				F6C83355D1C72DC6DC270D3B306D86E7 /* Pod */,
-				FDD99AE1B902D04698BE53ED3221343F /* Support Files */,
-=======
 				BEF8F4C6CA6FFA279613BAD2D64D9F61 /* LICENSE */,
 				DCDE240433F56327F6E9646174A81261 /* objchttp.podspec */,
 				A90C0AF97682452D3799F01227448ED0 /* README.md */,
->>>>>>> 47d398d65f82d2836af04a8da838637906214bd5
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -293,13 +257,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				18F37FED26B0546E00FAF9D0 /* ServiceError.h in Headers */,
-				FA65E718C6C141D955C8627A40034ECD /* httpRequest.h in Headers */,
-				677DCFF2CB1C3A5ED027EB7A6A5005C1 /* objchttp-umbrella.h in Headers */,
-=======
 				C8E72404494D24F77D2E1EBA9DCB40C8 /* Pods-objchttp_Example-umbrella.h in Headers */,
->>>>>>> 47d398d65f82d2836af04a8da838637906214bd5
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,13 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				02DE813992A85F1504CF7706FC3F4BC3 /* httpRequest.m in Sources */,
-				18F37FEE26B0546E00FAF9D0 /* ServiceError.m in Sources */,
-				CFBCC2E446825D044B8A302DA4A197E9 /* objchttp-dummy.m in Sources */,
-=======
 				A4CD63D66EF390A3B5561A62567E0BD9 /* Pods-objchttp_Tests-dummy.m in Sources */,
->>>>>>> 47d398d65f82d2836af04a8da838637906214bd5
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
