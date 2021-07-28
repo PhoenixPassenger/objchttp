@@ -51,8 +51,7 @@ And the function looks like this
 }];
 ```
 
-Where `uDictionary` is a NSMutableDictionary where you will pass the json.
-And `@"/posts"` is the endpoint for the request. 
+Where `uDictionary` is a NSMutableDictionary where you will pass the json and `@"/posts"` is the endpoint for the request. 
 
 ## Example
 

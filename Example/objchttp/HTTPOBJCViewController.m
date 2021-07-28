@@ -37,12 +37,19 @@
 //        NSLog(@"Callback GET");
 //        [self printString: result];
 //    }];
-
-    // POST
-    [requester postData:uDictionary :@"/posts" completion:^(NSString * result) {
-        NSLog(@"Callback POST");
+      // requestWithMethod
+    [requester requestWithMethod:@"POST" :@"/posts" completion:^(NSString * result) {
         [self printString: result];
     }];
+    // requestWithMethodAndBody
+  [requester requestWithMethodAndBody:@"POST":uDictionary:@"/posts" completion:^(NSString * result) {
+      [self printString: result];
+  }];
+    // POST
+//    [requester postData:uDictionary :@"/posts" completion:^(NSString * result) {
+//        NSLog(@"Callback POST");
+//        [self printString: result];
+//    }];
 //    // PUT
 //    [requester putData:uDictionary :@"/users/2"
 //            completion:^(NSString * result) {

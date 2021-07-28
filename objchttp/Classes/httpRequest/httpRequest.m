@@ -244,7 +244,8 @@
 
         [urlRequest setHTTPMethod:httpMethod];
         [urlRequest setHTTPBody:jsonData];
-
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         NSLog(@"\n🚀 %@ request %@", httpMethod, urlRequest.description);
 
         /// Checar o body da request como string
@@ -264,7 +265,7 @@
                                                                           error:&serializationError];
 
                 NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
-                if (HTTPResponse.statusCode != 200) {
+                if (HTTPResponse.statusCode != 200 && HTTPResponse.statusCode != 201 ) {
                     NSLog(@"%@ Response Error", httpMethod);
                     [self printErrorWithStatusCode:HTTPResponse.statusCode error:nil];
                 }
@@ -278,7 +279,7 @@
     }
 }
 
--(void)requestWithMethod: (NSString *)httpMethod : (NSMutableDictionary *)jsonDict : (NSString *)routerParam
+-(void)requestWithMethod: (NSString *)httpMethod : (NSString *)routerParam
     completion: (void (^)(NSString*))callbackBlock {
 
     NSURLSessionConfiguration *defaultSessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -290,44 +291,34 @@
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
 
     NSError* error;
-    NSDictionary *userDictionary = [[NSDictionary alloc] initWithDictionary:jsonDict];
 
-    if ([NSJSONSerialization isValidJSONObject:userDictionary]) {
-        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:userDictionary options:NSJSONWritingPrettyPrinted error:&error];
+    [urlRequest setHTTPMethod:httpMethod];
+    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    NSLog(@"\n🚀 %@  request %@", httpMethod,urlRequest.description);
 
-        [urlRequest setHTTPMethod:httpMethod];
-        [urlRequest setHTTPBody:jsonData];
+    [[defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data,
+                                                                        NSURLResponse *response,
+                                                                        NSError *error)  {
 
-        NSLog(@"\n🚀 PUT request %@", urlRequest.description);
+        if (error) NSLog(@"%@ Request error - %@",httpMethod ,ServiceError.badRequest);
+        else {
 
-        /// Checar o body da request como string
-        NSLog(@"\n⬆️ Body enviado pra PUT request %@", [[NSString alloc] initWithData: urlRequest.HTTPBody encoding:NSUTF8StringEncoding]);
+            NSError * serializationError;
+            NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:kNilOptions
+                                                                      error:&serializationError];
 
-        [[defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data,
-                                                                            NSURLResponse *response,
-                                                                            NSError *error)  {
-
-            if (error) NSLog(@"PUT Request error - %@",ServiceError.badRequest);
-            else {
-                //NSLog(@"\n⬇️ Body recebido no retorno da PUT request %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
-
-                NSError * serializationError;
-                NSDictionary *results = [NSJSONSerialization JSONObjectWithData:data
-                                                                        options:kNilOptions
-                                                                          error:&serializationError];
-
-                NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
-                if (HTTPResponse.statusCode != 200) {
-                    NSLog(@"GET Response Error");
-                    [self printErrorWithStatusCode:HTTPResponse.statusCode error:nil];
-                }
-
-                if (serializationError) NSLog(@"PUT JSONSerialization error - %@", serializationError.localizedDescription);
-                else callbackBlock(results.description);
+            NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+            if (HTTPResponse.statusCode != 200 && HTTPResponse.statusCode != 201) {
+                NSLog(@"%@ Response Error",httpMethod);
+                [self printErrorWithStatusCode:HTTPResponse.statusCode error:nil];
             }
 
-        }] resume ];
-        
-    }
+            if (serializationError) NSLog(@"%@ JSONSerialization error - %@",httpMethod ,serializationError.localizedDescription);
+            else callbackBlock(results.description);
+        }
+
+    }] resume ];
 }
 @end
