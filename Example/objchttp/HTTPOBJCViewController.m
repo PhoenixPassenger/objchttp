@@ -25,9 +25,9 @@
 {
     [super viewDidLoad];
     httpRequest * requester = [httpRequest alloc];
-    NSDictionary *userDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:@"Fullstack", @"job", nil];
-    NSDictionary *uDictionary = userDictionary.mutableCopy;
+    NSMutableDictionary *uDictionary = [[NSMutableDictionary alloc] init];
     [uDictionary setValue:@"Pikachu" forKey:@"name"];
+    [uDictionary setValue:@"fullstack" forKey:@"job"];
     requester.schema = @"https";
     requester.host = @"://jsonplaceholder.typicode.com";
 

@@ -37,6 +37,7 @@
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:@"GET"];
+    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
 
     NSLog(@"\n🚀 GET request %@", urlRequest.description);
 
@@ -84,10 +85,12 @@
     NSDictionary *userDictionary = [[NSDictionary alloc] initWithDictionary:jsonDict];
 
     if ([NSJSONSerialization isValidJSONObject:userDictionary]) {
-        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:userDictionary options:NSJSONWritingPrettyPrinted error: &error];
+        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:userDictionary options:0 error: &error];
         
         [urlRequest setHTTPMethod:@"POST"];
         [urlRequest setHTTPBody:jsonData];
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
 
         NSLog(@"\n🚀 POST request %@", urlRequest.description);
 
@@ -137,11 +140,13 @@
     NSDictionary *userDictionary = [[NSDictionary alloc] initWithDictionary:jsonDict];
 
     if ([NSJSONSerialization isValidJSONObject:userDictionary]) {
-        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:userDictionary options:NSJSONWritingPrettyPrinted error:&error];
+        NSData* jsonData = [NSJSONSerialization dataWithJSONObject:userDictionary options:0 error:&error];
 
         [urlRequest setHTTPMethod:@"PUT"];
         [urlRequest setHTTPBody:jsonData];
-
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        
         NSLog(@"\n🚀 PUT request %@", urlRequest.description);
 
         /// Checar o body da request como string
@@ -187,6 +192,7 @@
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
 
     [urlRequest setHTTPMethod:@"DELETE"];
+    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
 
     NSLog(@"\n🚀 DELETE request %@", urlRequest.description);
 

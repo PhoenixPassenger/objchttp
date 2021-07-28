@@ -16,7 +16,7 @@
 -(void)putData: (NSMutableDictionary *)jsonDict :(NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
 -(void)deleteData: (NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
 -(void)requestWithMethodAndBody: (NSString *)httpMethod : (NSMutableDictionary *)jsonDict :(NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
--(void)requestWithMethod: (NSString *)httpMethod : (NSMutableDictionary *)jsonDict :(NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
+-(void)requestWithMethod: (NSString *)httpMethod :(NSString *)routerParam completion: (void (^)(NSString*))callbackBlock;
 
 - (void)printErrorWithStatusCode:(long)code error:(NSError**)error;
 
