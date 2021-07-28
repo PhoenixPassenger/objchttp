@@ -5,8 +5,9 @@
 //  Created by Rodrigo Silva Ribeiro on 20/07/21.
 //
 #import <Foundation/Foundation.h>
-#import "httpRequest.h"
 #import "ServiceError.h"
+#import "httpRequest.h"
+
 
 @implementation httpRequest
 
