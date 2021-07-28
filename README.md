@@ -86,6 +86,12 @@ it, simply add the following line to your Podfile:
 pod 'objchttp'
 ```
 
+## Screenshots
+
+</br>
+
+<img src="screenshot/ScreenshotProjectExample.png" alt="screenshot" width="950"/>
+
 ## Author
 
 32482081, Rodrigo.ato@hotmail.com
