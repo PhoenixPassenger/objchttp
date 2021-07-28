@@ -1,9 +1,9 @@
 {
   "name": "objchttp",
   "version": "0.1.0",
-  "summary": "A short description of objchttp.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/32482081/objchttp",
+  "summary": "A library made fully in objective c to make http calls.",
+  "description": "With objchttp you can make http calls, get their responses by completion handlers and use that response to make your app connect to the internet in a fast and easy way.",
+  "homepage": "https://github.com/PhoenixPassenger/objchttp",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "32482081": "Rodrigo.ato@hotmail.com"
   },
   "source": {
-    "git": "https://github.com/32482081/objchttp.git",
+    "git": "https://github.com/PhoenixPassenger/objchttp.git",
     "tag": "0.1.0"
   },
   "platforms": {
