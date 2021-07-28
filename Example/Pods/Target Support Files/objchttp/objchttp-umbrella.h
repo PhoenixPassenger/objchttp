@@ -11,7 +11,7 @@
 #endif
 
 #import "httpRequest.h"
-#import "ServiceError.h"
+#import "serviceError.h"
 
 FOUNDATION_EXPORT double objchttpVersionNumber;
 FOUNDATION_EXPORT const unsigned char objchttpVersionString[];

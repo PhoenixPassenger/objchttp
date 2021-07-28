@@ -6,11 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ServiceError.h"
+#import "serviceError.h"
 
 NSString *const ObjcHttpErrorDomain = @"org.cocoapods.objchttp";
 
-@implementation ServiceError
+@implementation serviceError
 
 +(NSError *)requestFailedWithDescription:(NSString *)description {
     return [NSError errorWithDomain: ObjcHttpErrorDomain

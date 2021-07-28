@@ -5,7 +5,7 @@
 //  Created by Rodrigo Silva Ribeiro on 20/07/21.
 //
 #import <Foundation/Foundation.h>
-#import "ServiceError.h"
+#import "serviceError.h"
 #import "httpRequest.h"
 
 
@@ -15,13 +15,13 @@
 - (void)printErrorWithStatusCode:(long)code error:(NSError**)error {
     switch (code) {
     case 404:
-        *error = [ServiceError notFound];
+        *error = [serviceError notFound];
         break;
     case 400:
-        *error = [ServiceError badRequest];
+        *error = [serviceError badRequest];
         break;
     default:
-        *error = [ServiceError unknownErrorWithStatusCode: (int)code];
+        *error = [serviceError unknownErrorWithStatusCode: (int)code];
         break;
     }
 }
@@ -47,7 +47,7 @@
                                                                         NSURLResponse *response,
                                                                         NSError *error)  {
         if (error) NSLog(@"GET Request error - %@",
-                         [ServiceError requestFailedWithDescription:error.localizedDescription]);
+                         [serviceError requestFailedWithDescription:error.localizedDescription]);
         else {
             //NSLog(@"\n⬇️ Body recebido no retorno da GET request %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
 
@@ -103,7 +103,7 @@
                                                                             NSError *error)  {
 
             if (error) NSLog(@"POST Request error - %@",
-                             [ServiceError requestFailedWithDescription:error.localizedDescription]);
+                             [serviceError requestFailedWithDescription:error.localizedDescription]);
             else {
                 //NSLog(@"\n⬇️ Body recebido no retorno da POST request %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
 
@@ -157,7 +157,7 @@
                                                                             NSURLResponse *response,
                                                                             NSError *error)  {
 
-            if (error) NSLog(@"PUT Request error - %@",ServiceError.badRequest);
+            if (error) NSLog(@"PUT Request error - %@",serviceError.badRequest);
             else {
                 //NSLog(@"\n⬇️ Body recebido no retorno da PUT request %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
 
@@ -203,7 +203,7 @@
 
         //NSLog(@"\n⏺ Method DELETE successfull");
 
-        if (error) NSLog(@"DELETE Request error - %@",ServiceError.badRequest);
+        if (error) NSLog(@"DELETE Request error - %@",serviceError.badRequest);
         else {
             //NSLog(@"\n⬇️ Body recebido no retorno da DELETE request %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
 
@@ -256,7 +256,7 @@
                                                                             NSURLResponse *response,
                                                                             NSError *error)  {
 
-            if (error) NSLog(@"%@ Request error - %@", httpMethod, ServiceError.badRequest);
+            if (error) NSLog(@"%@ Request error - %@", httpMethod, serviceError.badRequest);
             else {
                 //NSLog(@"\n⬇️ Body recebido no retorno da PUT request %@", [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding]);
 
@@ -302,7 +302,7 @@
                                                                         NSURLResponse *response,
                                                                         NSError *error)  {
 
-        if (error) NSLog(@"%@ Request error - %@",httpMethod ,ServiceError.badRequest);
+        if (error) NSLog(@"%@ Request error - %@",httpMethod ,serviceError.badRequest);
         else {
 
             NSError * serializationError;

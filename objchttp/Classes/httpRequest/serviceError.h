@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ServiceError: NSObject
+@interface serviceError: NSObject
 
 +(NSError *)requestFailedWithDescription:(NSString *)description;
 +(NSError *)malformedURLRequestWithURL:(NSString *)url;
