@@ -10,6 +10,7 @@
 		2BF2427943AFB56750F61E2CEAB3ABFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		501C51E54998819000FD3BE9079E67C5 /* Pods-objchttp_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7524277AC3F7FFA8A1DCE35E441B1D95 /* Pods-objchttp_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B12AA2C26B18B38002D3F35 /* ServiceError.h in Headers */ = {isa = PBXBuildFile; fileRef = AC3E6E8D2EC0BEE28AF5C86D35053CB3 /* ServiceError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B12AA2D26B18C05002D3F35 /* httpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = EAC4CE4EB5C603868041948BB64D349B /* httpRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C69B11195A2455EC374B2177D98297B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		A4CD63D66EF390A3B5561A62567E0BD9 /* Pods-objchttp_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 545BE4D5288AB8F3EC0D51BA265F896B /* Pods-objchttp_Tests-dummy.m */; };
 		AB6013F25FF83D558A1CC08F04B6BA7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
@@ -17,7 +18,6 @@
 		D044833C3924B22F6FDB00279C685B62 /* ServiceError.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F45BA44129AFAEDD817F6474E19CA3 /* ServiceError.m */; };
 		D32F3041573ADA14633D51F0AC76F101 /* objchttp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D8EAD849A56781564E8496760FA61 /* objchttp-dummy.m */; };
 		D99C20FFF4222FBF6E1A1FB543C985D0 /* Pods-objchttp_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6117D105C0D09F698D230CF5E564CD /* Pods-objchttp_Example-dummy.m */; };
-		E10382CBBFBFDB927D682B68049026EE /* httpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = EAC4CE4EB5C603868041948BB64D349B /* httpRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E860009BC218D7746E58F5D6DEF44546 /* httpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B45DCD2727D5117862E4B34AC535C119 /* httpRequest.m */; };
 		FB5AD084B8E9A9E1AB34AE07CC6350F8 /* objchttp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D9D6A84FCCD5D6E5D786CD2CBC300E7 /* objchttp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -265,9 +265,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E10382CBBFBFDB927D682B68049026EE /* httpRequest.h in Headers */,
 				FB5AD084B8E9A9E1AB34AE07CC6350F8 /* objchttp-umbrella.h in Headers */,
 				5B12AA2C26B18B38002D3F35 /* ServiceError.h in Headers */,
+				5B12AA2D26B18C05002D3F35 /* httpRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
