@@ -18,8 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = [<<-DESC
-  "With objchttp you can make http calls, get their responses by completion handlers and use that response to make your app connect to the internet in a fast and easy way"
-                       DESC]
+  With objchttp you can make http calls, get their responses by completion handlers and use that response to make your app connect to the internet in a fast and easy way
+  DESC]
 
   s.homepage         = 'https://github.com/PhoenixPassenger/objchttp'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
