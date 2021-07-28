@@ -7,7 +7,7 @@
 
 ## How to use
 
-
+### Common HTTP Requests
 To use objchttp you have to implement an object of the class httpReques iniciating that object with the schema `http or https` and the `host`, following this example
 
 ```
@@ -26,7 +26,7 @@ To make the http call simply use that object with the method you what, in the fo
 ```
 
  Where `fetchData` is the name of the function, them you pass the endpoint of the API and a completion, in this case we are calling the `printString` function from our ViewController.
- The result in question is a NSString containing a Json Object with the response.
+ The result in question is a NSString containing a JSON Object with the response.
  
 There is four simple http requests, being : 
 
@@ -52,6 +52,24 @@ And the function looks like this
 ```
 
 Where `uDictionary` is a NSMutableDictionary where you will pass the json and `@"/posts"` is the endpoint for the request. 
+### Custom HTTP Requests
+The method `requestWithMethod` you can pass the method to the request
+```
+[requester requestWithMethod:@"POST" :@"/posts" completion:^(NSString * result) {
+    [self printString: result];
+}];
+```
+Where `requestWithMethod` is the name of the function ,`@:"POST"` is the method and `@"/posts"` is the endpoint, them you pass the endpoint of the API and a completion, in this case we are calling the `printString` function from our ViewController.
+The result here is a NSString containing a JSON Object with the response.
+
+The method `requestWithMethod` you can pass the method to the request and a body to the function
+```
+[requester requestWithMethodAndBody:@"POST":uDictionary:@"/posts" completion:^(NSString * result) {
+  [self printString: result];
+}];
+```
+Where `requestWithMethodAndBody` is the name of the function ,`@:"POST"`  is the method , `uDictionary` is a NSMutableDictionary with the JSON Object and `@"/posts"` is the endpoint, them you pass the endpoint of the API and a completion, in this case we are calling the `printString` function from our ViewController.
+The result will be a NSString containing a JSON Object with the response.
 
 ## Example
 

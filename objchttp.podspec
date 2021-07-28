@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'objchttp'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of objchttp.'
+  s.summary          = 'A library made fully in objective c to make http calls.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,14 +18,14 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  With objchttp you can make http calls, get their responses by completion handlers and use that response to make your app connect to the internet in a fast and easy way.
                        DESC
 
-  s.homepage         = 'https://github.com/32482081/objchttp'
+  s.homepage         = 'https://github.com/PhoenixPassenger/objchttp'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '32482081' => 'Rodrigo.ato@hotmail.com' }
-  s.source           = { :git => 'https://github.com/32482081/objchttp.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/PhoenixPassenger/objchttp.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
