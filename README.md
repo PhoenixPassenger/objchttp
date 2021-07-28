@@ -94,7 +94,8 @@ pod 'objchttp'
 
 ## Author
 
-32482081, Rodrigo.ato@hotmail.com
+Rodrigo.ato@hotmail.com
+Alleypereira@icloud.com
 
 ## License
 
