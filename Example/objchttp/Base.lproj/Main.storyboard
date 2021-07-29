@@ -98,24 +98,24 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="owG-oG-Tel" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="31" id="036-A7-Vvo"/>
                             <constraint firstItem="owG-oG-Tel" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="31" id="0P4-jZ-Wps"/>
                             <constraint firstAttribute="trailing" secondItem="owG-oG-Tel" secondAttribute="trailing" constant="28" id="6FW-it-kPw"/>
                             <constraint firstItem="4XI-Gb-LYB" firstAttribute="height" secondItem="XVy-To-esa" secondAttribute="height" multiplier="1.13333" id="CiA-DI-WEa"/>
                             <constraint firstItem="NjC-Ov-LZS" firstAttribute="height" secondItem="XVy-To-esa" secondAttribute="height" id="IZk-iP-JTg"/>
                             <constraint firstItem="5Bo-s9-Oy4" firstAttribute="width" secondItem="XVy-To-esa" secondAttribute="width" id="PZg-v5-DKt"/>
                             <constraint firstItem="4XI-Gb-LYB" firstAttribute="width" secondItem="XVy-To-esa" secondAttribute="width" id="WAi-TI-XAq"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="NjC-Ov-LZS" secondAttribute="bottom" constant="50" id="Y4a-vY-rke"/>
                             <constraint firstItem="5Bo-s9-Oy4" firstAttribute="centerY" secondItem="XVy-To-esa" secondAttribute="centerY" id="bo7-Bg-Aob"/>
                             <constraint firstItem="NjC-Ov-LZS" firstAttribute="top" secondItem="XVy-To-esa" secondAttribute="bottom" constant="25" id="fuf-qm-DGQ"/>
                             <constraint firstItem="XVy-To-esa" firstAttribute="leading" secondItem="owG-oG-Tel" secondAttribute="leading" id="gFs-vL-9Kk"/>
                             <constraint firstItem="4XI-Gb-LYB" firstAttribute="centerY" secondItem="NjC-Ov-LZS" secondAttribute="centerY" id="gmb-Hn-uIJ"/>
                             <constraint firstItem="XVy-To-esa" firstAttribute="top" secondItem="owG-oG-Tel" secondAttribute="bottom" constant="21" id="lBV-M3-o7d"/>
-                            <constraint firstItem="owG-oG-Tel" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="31" id="o9D-RW-4lN"/>
                             <constraint firstItem="NjC-Ov-LZS" firstAttribute="leading" secondItem="XVy-To-esa" secondAttribute="leading" id="sDl-RL-bhS"/>
                             <constraint firstItem="5Bo-s9-Oy4" firstAttribute="height" secondItem="XVy-To-esa" secondAttribute="height" multiplier="1.13333" id="sEm-s2-6pm"/>
                             <constraint firstItem="NjC-Ov-LZS" firstAttribute="width" secondItem="XVy-To-esa" secondAttribute="width" id="sRv-le-sbF"/>
                             <constraint firstItem="5Bo-s9-Oy4" firstAttribute="trailing" secondItem="owG-oG-Tel" secondAttribute="trailing" id="sS9-9U-Xhe"/>
                             <constraint firstItem="4XI-Gb-LYB" firstAttribute="trailing" secondItem="5Bo-s9-Oy4" secondAttribute="trailing" id="tQY-az-fpa"/>
-                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="NjC-Ov-LZS" secondAttribute="bottom" constant="50" id="zTV-wI-oaJ"/>
                         </constraints>
                     </view>
                     <connections>

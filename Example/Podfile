@@ -8,6 +8,10 @@ target 'objchttp_Example' do
   target 'objchttp_Tests' do
     inherit! :search_paths
 
-    
   end
+
+  target 'objchttp_Example_Swift' do
+    pod 'objchttp', :path => '../'
+    
+    end
 end
