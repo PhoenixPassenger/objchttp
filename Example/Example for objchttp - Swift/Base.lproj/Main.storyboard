@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="objchttp_Example_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gZw-MS-74u">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkc-4E-IGq">
+                                <rect key="frame" x="31" y="650" width="120" height="30"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="eFd-NL-4Jl"/>
+                                    <constraint firstAttribute="height" constant="30" id="yQ3-O8-QTi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="GET">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="getButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M8P-r9-tQs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbb-2q-EKW">
+                                <rect key="frame" x="31" y="705" width="120" height="30"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="PUT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="putButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7BH-lv-6sm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFL-9D-h3Q">
+                                <rect key="frame" x="266" y="703" width="120" height="34"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="DELETE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="deleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mH0-b6-kZV"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Request Result" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lhh-BO-qm6">
+                                <rect key="frame" x="31" y="120" width="355" height="480"/>
+                                <color key="backgroundColor" red="0.91296279430000005" green="0.91296279430000005" blue="0.96758627139999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="480" id="vtI-fL-Dvh"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1se-Me-whD">
+                                <rect key="frame" x="266" y="648" width="120" height="34"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="POST">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="postButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kcq-1M-IGG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="q7G-iU-TG0"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1se-Me-whD" firstAttribute="height" secondItem="lkc-4E-IGq" secondAttribute="height" multiplier="1.13333" id="0oD-Cg-3K5"/>
+                            <constraint firstItem="1se-Me-whD" firstAttribute="trailing" secondItem="Lhh-BO-qm6" secondAttribute="trailing" id="B6E-Ey-X0T"/>
+                            <constraint firstItem="Lhh-BO-qm6" firstAttribute="top" secondItem="gZw-MS-74u" secondAttribute="top" constant="120" id="CVY-y0-Xxv"/>
+                            <constraint firstItem="fbb-2q-EKW" firstAttribute="leading" secondItem="lkc-4E-IGq" secondAttribute="leading" id="PK3-TX-NUU"/>
+                            <constraint firstItem="EFL-9D-h3Q" firstAttribute="width" secondItem="lkc-4E-IGq" secondAttribute="width" id="PPV-o5-VJu"/>
+                            <constraint firstItem="fbb-2q-EKW" firstAttribute="height" secondItem="lkc-4E-IGq" secondAttribute="height" id="Qrd-VN-XQY"/>
+                            <constraint firstItem="1se-Me-whD" firstAttribute="centerY" secondItem="lkc-4E-IGq" secondAttribute="centerY" id="Vdg-ip-G3e"/>
+                            <constraint firstItem="EFL-9D-h3Q" firstAttribute="trailing" secondItem="1se-Me-whD" secondAttribute="trailing" id="YCg-KF-mny"/>
+                            <constraint firstItem="EFL-9D-h3Q" firstAttribute="height" secondItem="lkc-4E-IGq" secondAttribute="height" multiplier="1.13333" id="bvl-vG-1ad"/>
+                            <constraint firstItem="fbb-2q-EKW" firstAttribute="width" secondItem="lkc-4E-IGq" secondAttribute="width" id="g8M-vW-zlI"/>
+                            <constraint firstItem="lkc-4E-IGq" firstAttribute="leading" secondItem="Lhh-BO-qm6" secondAttribute="leading" id="gGi-aj-tJO"/>
+                            <constraint firstItem="lkc-4E-IGq" firstAttribute="top" secondItem="Lhh-BO-qm6" secondAttribute="bottom" constant="50" id="jXs-IK-gWY"/>
+                            <constraint firstItem="EFL-9D-h3Q" firstAttribute="centerY" secondItem="fbb-2q-EKW" secondAttribute="centerY" id="o1e-cP-2he"/>
+                            <constraint firstAttribute="trailing" secondItem="Lhh-BO-qm6" secondAttribute="trailing" constant="28" id="oyg-HR-sfY"/>
+                            <constraint firstItem="Lhh-BO-qm6" firstAttribute="leading" secondItem="gZw-MS-74u" secondAttribute="leading" constant="31" id="s3S-Cz-9sI"/>
+                            <constraint firstItem="fbb-2q-EKW" firstAttribute="top" secondItem="lkc-4E-IGq" secondAttribute="bottom" constant="25" id="yxK-9j-Z4b"/>
+                            <constraint firstItem="1se-Me-whD" firstAttribute="width" secondItem="lkc-4E-IGq" secondAttribute="width" id="zpN-EM-8Lj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="getTextView" destination="Lhh-BO-qm6" id="lWx-uF-mZq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="115"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -8,7 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'objchttp'
-  s.version          = '0.1.2'
+
+  s.version          = '0.1.3'
+
   s.summary          = 'A library made fully in objective c to make http calls.'
 
 # This description is used to generate tags and improve search results.
